@@ -38,6 +38,8 @@ form>div>div{
 #submit{
     margin: 20px;
     width: 40%;
+    color: white;
+    background-color: blue;
 }
 
 #submit:hover{

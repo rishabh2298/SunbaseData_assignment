@@ -9,6 +9,7 @@ let sessionToken = JSON.parse(localStorage.getItem("sessionToken"));
 
 let userData = [];
 
+
 function formTable(userData){
 
     userData.forEach(user => {
@@ -41,15 +42,16 @@ function formTable(userData){
 
         // action
         let action = document.createElement("td");
+        action.setAttribute("id","action");
 
         let box = document.createElement("div");
 
         let del = document.createElement("h4");
-        del.innerText = "DEL";
+        del.innerText = "DELETE";
         del.addEventListener("click", deleteRecord);
 
         let updt = document.createElement("h4");
-        updt.innerText = "UPDT";
+        updt.innerText = "UPDATE";
         updt.addEventListener("click", updateRecord);
 
         box.append(del,updt);

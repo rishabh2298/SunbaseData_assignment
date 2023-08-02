@@ -39,6 +39,10 @@ tbody{
     text-align: center;
 }
 
+tr{
+    height: 30px;
+}
+
 #action>div{
     display: flex;
     justify-content: space-between;
@@ -49,7 +53,7 @@ tbody{
     cursor: pointer;
     color : white;
     background-color: red;
-    padding: 3%;
+    padding: 0 1%;
     border-radius: 5px;
 }
 
@@ -57,6 +61,6 @@ tbody{
     cursor: pointer;
     color : white;
     background-color: rgb(4, 124, 140);
-    padding: 3%;
+    padding: 0 1%;
     border-radius: 5px;
 }
