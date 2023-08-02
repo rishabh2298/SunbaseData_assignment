@@ -95,7 +95,7 @@ if(isUpdateRequired != null){
 function updateRecord(customer){
 
     oldUserUuid = isUpdateRequired.uuid;
-
+    
     let queryParams = new URLSearchParams({
         cmd : "update",
         uuid : oldUserUuid

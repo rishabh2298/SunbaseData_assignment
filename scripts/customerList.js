@@ -109,10 +109,19 @@ let createTable = () => {
 function deleteRecord(event){
 
     let selectedCustomer = event.target.parentNode.parentNode.parentNode;
+    let email = document.querySelector(".email").innerText;
+
+    let customerUuid = null;
+
+    userData.forEach(customer => {
+        if(customer.email == email){
+            customerUuid = customer.uuid;
+        }
+    })
 
     let queryParams = new URLSearchParams({
         cmd : "delete",
-        // uuid : selectedCustomer.customerUuid
+        uuid : customerUuid
     });
     
     fetch("https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp"+`?${queryParams}`, {
@@ -147,7 +156,18 @@ function updateRecord(event){
     
     // let cus = event.target.parentNode.parentNode.parentNode;
 
+    let email = document.querySelector(".email").innerText;
+
+    let customerUuid = null;
+
+    userData.forEach(customer => {
+        if(customer.email == email){
+            customerUuid = customer.uuid;
+        }
+    })
+
     let customer = {
+        "uuid" : customerUuid,
         "first_name" : document.querySelector(".first_name").innerText,
         "last_name" : document.querySelector(".last_name").innerText,
         "street" : document.querySelector(".street").innerText,
