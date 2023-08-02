@@ -18,39 +18,39 @@ function formTable(userData){
 
         let firstName = document.createElement("td");
         firstName.innerText = user.first_name;
-        firstName.setAttribute("id", "first_name")
+        firstName.setAttribute("class", "first_name")
 
         let lastName = document.createElement("td");
         lastName.innerText = user.last_name;
-        lastName.setAttribute("id", "last_name");
+        lastName.setAttribute("class", "last_name");
 
         let address = document.createElement("td");
         address.innerText = user.address;
-        address.setAttribute("id", "address");
+        address.setAttribute("class", "address");
 
         let street = document.createElement("td");
         street.innerText = user.street;
-        street.setAttribute("id", "street");
+        street.setAttribute("class", "street");
 
         let city = document.createElement("td");
         city.innerText = user.city;
-        city.setAttribute("id", "city");
+        city.setAttribute("class", "city");
 
         let state = document.createElement("td");
         state.innerText = user.state;
-        state.setAttribute("id", "state");
+        state.setAttribute("class", "state");
 
         let email = document.createElement("td");
         email.innerText = user.email;
-        email.setAttribute("id", "email");
+        email.setAttribute("class", "email");
 
         let phone = document.createElement("td");
         phone.innerText = user.phone;
-        phone.setAttribute("id", "phone");
+        phone.setAttribute("class", "phone");
 
         // action
         let action = document.createElement("td");
-        action.setAttribute("id","action");
+        action.setAttribute("class","action");
 
         let box = document.createElement("div");
 
@@ -109,10 +109,10 @@ let createTable = () => {
 function deleteRecord(event){
 
     let selectedCustomer = event.target.parentNode.parentNode.parentNode;
-    console.log(selectedCustomer)
+
     let queryParams = new URLSearchParams({
         cmd : "delete",
-        uuid : selectedCustomer.userUuid
+        // uuid : selectedCustomer.customerUuid
     });
     
     fetch("https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp"+`?${queryParams}`, {
@@ -145,15 +145,17 @@ function deleteRecord(event){
 
 function updateRecord(event){
     
+    // let cus = event.target.parentNode.parentNode.parentNode;
+
     let customer = {
-        "first_name" : document.querySelector("#first_name").innerText,
-        "last_name" : document.querySelector("#last_name").innerText,
-        "street" : document.querySelector("#street").innerText,
-        "address" : document.querySelector("#address").innerText,
-        "city" : document.querySelector("#city").innerText,
-        "state" : document.querySelector("#state").innerText,
-        "email" : document.querySelector("#email").innerText,
-        "phone" : document.querySelector("#phone").innerText
+        "first_name" : document.querySelector(".first_name").innerText,
+        "last_name" : document.querySelector(".last_name").innerText,
+        "street" : document.querySelector(".street").innerText,
+        "address" : document.querySelector(".address").innerText,
+        "city" : document.querySelector(".city").innerText,
+        "state" : document.querySelector(".state").innerText,
+        "email" : document.querySelector(".email").innerText,
+        "phone" : document.querySelector(".phone").innerText
     }
 
     localStorage.setItem("updateUser",JSON.stringify(customer));

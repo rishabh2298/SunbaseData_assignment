@@ -43,13 +43,13 @@ tr{
     height: 30px;
 }
 
-#action>div{
+.action>div{
     display: flex;
     justify-content: space-between;
     padding: 0 5%;
 }
 
-#action>div>h4:first-child:hover{
+.action>div>h4:first-child:hover{
     cursor: pointer;
     color : white;
     background-color: red;
@@ -57,7 +57,7 @@ tr{
     border-radius: 5px;
 }
 
-#action>div>h4:last-child:hover{
+.action>div>h4:last-child:hover{
     cursor: pointer;
     color : white;
     background-color: rgb(4, 124, 140);
