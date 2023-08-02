@@ -1,0 +1,62 @@
+*{
+    margin : 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body>div{
+    height: 100%;
+    width: 80%;
+    margin : 5% auto;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
+button{
+    background-color: rgba(0, 0, 255, 0.577);
+    font-size: 22px;
+    color: white;
+    padding: 2px 10px;
+    margin: 2%;
+    border-radius: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgba(20, 130, 203, 0.427);
+    box-shadow:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+table{
+    background-color: aliceblue;
+    margin: 0px auto;
+    width: 95%;
+    border-radius: 10px;
+}
+
+tbody{
+    background-color: rgba(172, 255, 47, 0.676);
+    text-align: center;
+}
+
+#action>div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+#action>div>h4:first-child:hover{
+    cursor: pointer;
+    color : white;
+    background-color: red;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+#action>div>h4:last-child:hover{
+    cursor: pointer;
+    color : white;
+    background-color: rgb(4, 124, 140);
+    padding: 3%;
+    border-radius: 5px;
+}

@@ -9,7 +9,6 @@ let sessionToken = JSON.parse(localStorage.getItem("sessionToken"));
 
 let userData = [];
 
-
 function formTable(userData){
 
     userData.forEach(user => {
