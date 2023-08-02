@@ -1,4 +1,4 @@
-// login logic
+// 1. login and Authenticate user
 
 
 let submitLoginForm = (event) => {
