@@ -18,27 +18,35 @@ function formTable(userData){
 
         let firstName = document.createElement("td");
         firstName.innerText = user.first_name;
+        firstName.setAttribute("id", "first_name")
 
         let lastName = document.createElement("td");
         lastName.innerText = user.last_name;
+        lastName.setAttribute("id", "last_name");
 
         let address = document.createElement("td");
         address.innerText = user.address;
+        address.setAttribute("id", "address");
 
         let street = document.createElement("td");
         street.innerText = user.street;
+        street.setAttribute("id", "street");
 
         let city = document.createElement("td");
         city.innerText = user.city;
+        city.setAttribute("id", "city");
 
         let state = document.createElement("td");
         state.innerText = user.state;
+        state.setAttribute("id", "state");
 
         let email = document.createElement("td");
         email.innerText = user.email;
+        email.setAttribute("id", "email");
 
         let phone = document.createElement("td");
         phone.innerText = user.phone;
+        phone.setAttribute("id", "phone");
 
         // action
         let action = document.createElement("td");
@@ -100,11 +108,11 @@ let createTable = () => {
 
 function deleteRecord(event){
 
-    let userUuid = event.target.parentNode.uuid;
-    
+    let selectedCustomer = event.target.parentNode.parentNode.parentNode;
+    console.log(selectedCustomer)
     let queryParams = new URLSearchParams({
         cmd : "delete",
-        uuid : userUuid
+        uuid : selectedCustomer.userUuid
     });
     
     fetch("https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp"+`?${queryParams}`, {
@@ -129,17 +137,26 @@ function deleteRecord(event){
     })
 
     // removing from table
-    event.target.parentNode.remove();
+    selectedCustomer.remove();
 }
 
 
 // 5. updating record and redirect to addCustomerForm to make neccessary updation
 
 function updateRecord(event){
+    
+    let customer = {
+        "first_name" : document.querySelector("#first_name").innerText,
+        "last_name" : document.querySelector("#last_name").innerText,
+        "street" : document.querySelector("#street").innerText,
+        "address" : document.querySelector("#address").innerText,
+        "city" : document.querySelector("#city").innerText,
+        "state" : document.querySelector("#state").innerText,
+        "email" : document.querySelector("#email").innerText,
+        "phone" : document.querySelector("#phone").innerText
+    }
 
-    let user = event.target.parentNode;
-
-    localStorage.setItem("updateUser",JSON.stringify(user));
+    localStorage.setItem("updateUser",JSON.stringify(customer));
 
     // update the required details 
     window.location.href = "addCustomer.html";
