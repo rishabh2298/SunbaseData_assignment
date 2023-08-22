@@ -18,4 +18,5 @@ Add Customer Page
 ```
 Customer List
 ```
-![customer_list](https://github.com/rishabh2298/SunbaseData_assignment/assets/105991025/97b557d3-acb9-485e-820a-7863fe7327ae)
+
+![customer_list](https://github.com/rishabh2298/SunbaseData_assignment/assets/105991025/487efbda-2fe3-4ee4-9cd0-76f499ab42d0)
